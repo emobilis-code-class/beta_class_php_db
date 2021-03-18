@@ -9,7 +9,7 @@
 		<?php include('nav.php')?>
 		<h3 style="color: #2199D5; font-family: monospace;">My Products</h3>
 
-		<div class="col-8">
+		<div class="col">
 			
 		
 
