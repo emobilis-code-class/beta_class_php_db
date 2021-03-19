@@ -6,7 +6,17 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<?php include('nav.php')?>
+		<?php 
+			include('nav.php');
+			require('checkloginstatus.php');
+			if ($_SESSION['role']=='customer') {
+				# code...
+				echo "You are customer cannot access this page";
+				header('location:index.php');
+			}
+		?>
+
+
 		<h3 style="color: #2199D5; font-family: monospace;">My Products</h3>
 
 		<div class="col">

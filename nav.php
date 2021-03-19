@@ -6,15 +6,30 @@ session_start();
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="index.php">Home</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="addproduct.php">Add Product</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="showproduct.php">My Products</a>
-  </li>
+  
 
   <?php
-  if ($_SESSION['name']!="") {
+  if (isset($_SESSION['name'])) {
+
+
+      //admin
+      if ($_SESSION['role']=='admin') {
+
+        echo '
+            <li class="nav-item">
+              <a class="nav-link" href="addproduct.php">Add Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="showproduct.php">My Products</a>
+          </li>
+        ';
+        # code...
+      }else{
+        echo '
+            <li class="nav-item">
+              <a class="nav-link" href="mypurchases.php">My Purchases</a>
+          </li>';
+      }
     # code...
       echo '<li class="nav-item">
     
@@ -29,9 +44,7 @@ session_start();
   }else{
     //login
     echo '
-        <li class="nav-item">
-    <a class="nav-link" href="register.php" tabindex="-1" aria-disabled="true">Register</a>
-    </li>
+       
 
      <li class="nav-item">
       <a class="nav-link" href="login.php" tabindex="-1" aria-disabled="true">Login</a>

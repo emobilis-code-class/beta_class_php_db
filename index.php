@@ -47,8 +47,10 @@
 								<div class="card col-4" style="">
 								  <div class="card-body">
 								    <h5 class="card-title">'.$record['name'].'</h5>
-								    <p class="card-text">'.$record['description'].'.</p>
+								    <p class="card-text" rows="3">'.$record['description'].'.</p>
 								    <h4 style="color:#E53206;">Ksh'.$record['cost'].'</h4>
+
+								    <a href="purchase.php?id='.$record['id'].'" class="btn btn-primary">Buy Now</a>
 								  </div>
 								</div>
 

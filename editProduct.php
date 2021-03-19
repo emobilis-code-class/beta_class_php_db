@@ -9,6 +9,14 @@
 		
 			<?php include('nav.php');
 
+			require('checkloginstatus.php');
+
+				if ($_SESSION['role']=='customer') {
+				# code...
+				echo "You are customer cannot access this page";
+				header('location:index.php');
+				}
+
 			$productId = $_GET['id'];
 			//echo "$productId";
 

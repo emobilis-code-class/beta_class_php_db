@@ -80,7 +80,7 @@
 				function insertDataToTable($fullName,$email,$phone,$password){
 					//connection with the db
 					require('dbconnect.php');
-					$sql = "INSERT INTO `customer`(`full_name`, `email`, `phone`, `password`) VALUES (?,?,?,?)";
+					$sql = "INSERT INTO `users`(`full_name`, `email`, `phone`, `password`) VALUES (?,?,?,?)";
 
 					//prepare the query
 					if($stmt = mysqli_prepare($conn,$sql)){

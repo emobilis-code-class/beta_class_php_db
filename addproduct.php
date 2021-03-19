@@ -6,7 +6,16 @@
 </head>
 <body>
 	<div class="container">
-			<?php include('nav.php')?>
+			<?php 
+				include('nav.php');
+				require('checkloginstatus.php');
+
+				if ($_SESSION['role']=='customer') {
+				# code...
+				echo "You are customer cannot access this page";
+				header('location:index.php');
+				}
+			?>
 			<div class="row">
 				<div class="col-4">
 					<img src="https://www.clipartmax.com/png/small/38-383442_shop-printed-revolution-online-and-earn-cash-add-product-icon-free.png" class="img-fluid">

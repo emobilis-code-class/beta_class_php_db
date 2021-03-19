@@ -55,7 +55,7 @@
 				//connect
 				require('dbconnect.php');
 				//sql
-				$sql = "SELECT * FROM customer WHERE email = ?";
+				$sql = "SELECT * FROM users WHERE email = ?";
 
 				//use bind
 				//prepare the statement
@@ -93,6 +93,7 @@
 							session_start();
 							$_SESSION['name']=$record['full_name'];
 							$_SESSION['id'] = $record['id'];
+							$_SESSION['role'] = $record['role'];
 
 						}else{
 							echo "<h4 style='color:red'>Invalid email or password.Try again</h4>";
